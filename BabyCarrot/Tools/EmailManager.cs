@@ -12,7 +12,7 @@ namespace BabyCarrot.Tools
     {
         public static void Send(string to, string subject, string contents)
         {
-            string sender = "do_not_reply@test.com";
+            string sender = "do_not_repl@test.com";
 
             string smtpHost = "smtp.com";
             int smtpPort = 2525;

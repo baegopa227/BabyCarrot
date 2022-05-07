@@ -11,7 +11,8 @@ namespace BabyCarrotTest1
     {
         static void Main(String[] args)
         {
-            EmailManager.Send(to, subejct, contents);
+            //EmailManager.Send(to, subejct, contents);
+            DBManager.connect();
         }
     }
 

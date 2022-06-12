@@ -5,11 +5,11 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BabyCarrot", "BabyCarrot\BabyCarrot.csproj", "{C9FD29A1-F504-43CC-8658-33B890BC2717}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BabyCarrotTest1", "BabyCarrotTest1\BabyCarrotTest1.csproj", "{C580314F-566A-4BDF-B052-3779671D1CAE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{2D5F901B-F68F-4C55-A764-336FDDE07E14}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{749074AA-0406-4EF1-915A-43EB189F2729}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabyCarrot_1", "BabyCarrot_1\BabyCarrot_1.csproj", "{F9687D7D-3D48-4C98-B11C-B2448AF35953}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{C9FD29A1-F504-43CC-8658-33B890BC2717}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9FD29A1-F504-43CC-8658-33B890BC2717}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9FD29A1-F504-43CC-8658-33B890BC2717}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C580314F-566A-4BDF-B052-3779671D1CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C580314F-566A-4BDF-B052-3779671D1CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C580314F-566A-4BDF-B052-3779671D1CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C580314F-566A-4BDF-B052-3779671D1CAE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D5F901B-F68F-4C55-A764-336FDDE07E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2D5F901B-F68F-4C55-A764-336FDDE07E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D5F901B-F68F-4C55-A764-336FDDE07E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{749074AA-0406-4EF1-915A-43EB189F2729}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{749074AA-0406-4EF1-915A-43EB189F2729}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{749074AA-0406-4EF1-915A-43EB189F2729}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9687D7D-3D48-4C98-B11C-B2448AF35953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9687D7D-3D48-4C98-B11C-B2448AF35953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9687D7D-3D48-4C98-B11C-B2448AF35953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9687D7D-3D48-4C98-B11C-B2448AF35953}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

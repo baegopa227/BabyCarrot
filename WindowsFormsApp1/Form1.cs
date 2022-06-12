@@ -22,12 +22,18 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = DBManager.Select("Jake");
+            label1.Text = DBManager.Select_Count().ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new Form2().Show();
+            this.Close();
         }
     }
 }

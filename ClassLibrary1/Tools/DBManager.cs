@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 using System;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace ClassLibrary1.Tools
 {
@@ -69,6 +71,37 @@ namespace ClassLibrary1.Tools
 
             Console.WriteLine("All done. Press any key to finish...");
             
+        }
+
+        public static List<Hashtable> Select(string sql)
+        {
+            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        List<Hashtable> list = new List<Hashtable>();
+
+                        while (reader.Read())
+                        {
+                            Hashtable ht = new Hashtable();
+
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                        
+                                ht.Add(reader.GetName(i), reader.GetValue(i));
+
+                            }
+                            list.Add(ht);
+                        }
+                        return list;
+                        
+                    }
+                }
+            }
         }
 
         public static void Insert()
@@ -161,38 +194,47 @@ namespace ClassLibrary1.Tools
 
     }
 
-        public static void Select()
+        public static int Select_Count()
 
         {
             // Connect to SQL
             Console.Write("Connecting to SQL Server ... ");
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
-                connection.Open();
-                Console.WriteLine("Done.");
 
-                // READ demo
-                Console.WriteLine("Reading data from table, press any key to continue...");
-                Console.ReadKey(true);
-                sql = "USE SIMPLEDB; SELECT name, ID, password FROM Members;";
-                using (SqlCommand command = new SqlCommand(sql, connection))
+                try
                 {
+                    connection.Open();
+                    Console.WriteLine("Done.");
 
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    // READ demo
+                    Console.WriteLine("Reading data from table, press any key to continue...");
+                    // sql = "USE SIMPLEDB; SELECT name, ID, password FROM Members;";
+                    sql = "USE SAMPLEDB; SELECT COUNT(*) FROM Members;";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        while (reader.Read())
+
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            Console.WriteLine("{0} {1} {2}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                            while (reader.Read())
+                            {
+                                //Console.WriteLine("{0} {1} {2}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                                return reader.GetInt32(0);
+                            }
+                            
                         }
                     }
+                    return 0;
+                }catch (Exception ex)
+                {
+                    return 5;
                 }
-
             }
 
 
         }
 
-        public static string Select(string name)
+        public static int Select_Count(string name)
 
         {
             // Connect to SQL
@@ -205,7 +247,7 @@ namespace ClassLibrary1.Tools
                 // READ demo
                 Console.WriteLine("Reading data from table, press any key to continue...");
                
-                sql = "USE SAMPLEDB; SELECT name, nickname, password FROM Members Where name=@name;";
+                sql = "USE SAMPLEDB; SELECT COUNT(*) FROM Members Where name=@name;";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("name", name);
@@ -214,15 +256,17 @@ namespace ClassLibrary1.Tools
                     {
                         while (reader.Read())
                         {
-                            return reader.GetString(0);
+                            return reader.GetInt32(0);
                         }
                     }
                 }
-                return "";
+                return 0;
             }
 
 
         }
+
+
 
     }
 }
